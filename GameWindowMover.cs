@@ -58,8 +58,8 @@ public class GameWindowMover : EditorWindow
 	//private bool usePlayerSettingsResolution = false;
 	
 	//For those that duplicate screen
-	private bool useDesktopResolution = false;
-	//private bool useDesktopResolution = true;
+	//private bool useDesktopResolution = false;
+	private bool useDesktopResolution = true;
 
 #if UNITY_STANDALONE_WIN
 
@@ -224,8 +224,8 @@ public class GameWindowMover : EditorWindow
 		gameView.minSize = new Vector2(gameSize.x, gameSize.y + tabHeight - osBorderWidth);
 		gameView.maxSize = gameView.minSize;
 		Rect newPos = new Rect(gamePosition.x, gamePosition.y - tabHeight, gameSize.x, gameSize.y + tabHeight - osBorderWidth);
-		gameView.ShowPopup();
 		gameView.position = newPos;
+		gameView.ShowPopup();
 	}
 	
 	void CloseGameWindow()
