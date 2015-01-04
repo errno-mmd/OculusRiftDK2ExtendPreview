@@ -58,8 +58,8 @@ public class GameWindowMover : EditorWindow
 	//private bool usePlayerSettingsResolution = false;
 	
 	//For those that duplicate screen
-	//private bool useDesktopResolution = false;
-	private bool useDesktopResolution = true;
+	private bool useDesktopResolution = false;
+	//private bool useDesktopResolution = true;
 
 #if UNITY_STANDALONE_WIN
 
@@ -128,10 +128,11 @@ public class GameWindowMover : EditorWindow
 		// Set first display(without main screen)
 		if (screenInfo.Count > 0)
 		{
+			int last_screen = screenInfo.Count - 1;
 			if (flg || gameSize.x == 0)
 			{
-				gameSize = new Vector2(screenInfo[0].width, screenInfo[0].height);
-				gamePosition = new Vector2(screenInfo[0].left, screenInfo[0].top);
+				gameSize = new Vector2(screenInfo[last_screen].width, screenInfo[last_screen].height);
+				gamePosition = new Vector2(screenInfo[last_screen].left, screenInfo[last_screen].top);
 			}
 		}
 	}
