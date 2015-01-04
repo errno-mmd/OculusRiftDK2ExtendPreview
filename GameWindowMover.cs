@@ -125,7 +125,7 @@ public class GameWindowMover : EditorWindow
 	{
 		screenInfo = new List<RectApi>();
 		GetDisplays();
-		// Set first display(without main screen)
+		// Set last display(without main screen)
 		if (screenInfo.Count > 0)
 		{
 			int last_screen = screenInfo.Count - 1;
